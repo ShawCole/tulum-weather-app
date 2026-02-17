@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tulum Weather</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="weather-app">
+        <header class="app-header">
+            <h1>Tulum Weather</h1>
+        </header>
+        <main class="weather-container">
+            <div id="loading" class="loading-spinner">
+                <i class="fas fa-spinner fa-spin"></i>
+                <p>Fetching weather data...</p>
+            </div>
+            <div id="weather-data" class="weather-data hidden">
+                <!-- Weather data will be injected here by JavaScript -->
+            </div>
+            <div id="error-message" class="error-message hidden">
+                <p>Failed to load weather data. Please try again later.</p>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

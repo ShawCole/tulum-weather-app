@@ -1,0 +1,133 @@
+:root {
+    --primary-color: #2a9d8f;
+    --secondary-color: #264653;
+    --accent-color: #e9c46a;
+    --text-color: #333333;
+    --light-text-color: #ffffff;
+    --background-color: #f4f4f4;
+    --card-background: #ffffff;
+    --error-color: #e76f51;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.weather-app {
+    background-color: var(--card-background);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 400px;
+    overflow: hidden;
+    text-align: center;
+    animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.app-header {
+    background-color: var(--secondary-color);
+    color: var(--light-text-color);
+    padding: 20px 15px;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.app-header h1 {
+    margin: 0;
+    font-size: 1.8em;
+    letter-spacing: 1px;
+}
+
+.weather-container {
+    padding: 25px 15px;
+}
+
+.loading-spinner, .error-message {
+    padding: 20px;
+}
+
+.loading-spinner i {
+    font-size: 3em;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.loading-spinner p, .error-message p {
+    font-size: 1.1em;
+    color: var(--text-color);
+}
+
+.error-message {
+    color: var(--error-color);
+    font-weight: bold;
+}
+
+.weather-data {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.weather-data div {
+    background-color: var(--background-color);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.weather-data div strong {
+    font-size: 0.9em;
+    color: #777;
+    margin-bottom: 5px;
+}
+
+.weather-data div span {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: var(--secondary-color);
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Responsive adjustments */
+@media (min-width: 600px) {
+    .weather-app {
+        max-width: 500px;
+    }
+
+    .app-header h1 {
+        font-size: 2.2em;
+    }
+
+    .weather-data {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (min-width: 900px) {
+    .weather-app {
+        max-width: 600px;
+    }
+
+    .weather-data {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
