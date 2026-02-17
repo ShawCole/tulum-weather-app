@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const latitude = 20.2117; // Tulum, Mexico latitude
     const longitude = -87.4633; // Tulum, Mexico longitude
 
-    const apiUrl = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true&temperature_unit=fahrenheit&windspeed_unit=mph&precipitation_unit=inch`;
+    const apiUrl = `/api/weather?latitude=${latitude}&longitude=${longitude}&current_weather=true&temperature_unit=fahrenheit&windspeed_unit=mph&precipitation_unit=inch`;
 
     fetch(apiUrl)
         .then(response => response.json())
